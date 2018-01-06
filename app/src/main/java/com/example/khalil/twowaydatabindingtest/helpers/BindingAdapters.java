@@ -1,8 +1,14 @@
-# TwoWayDataBindingTest
-Two Databinding for android. '@={variable}' is used for Two way DataBinding in android. If variable is a integer or float it can not bind directly to attribute which accept string as default syntax, it can bind in two ways. Easiest way is '@={""+variable}' and other is using BindingAdapter. 
-Problem of first way is if there is one digit or enter wrong character other than digit cursor goes to left. 
-Use of BindigAdapter can be used as
+package com.example.khalil.twowaydatabindingtest.helpers;
 
+import android.databinding.BindingAdapter;
+import android.databinding.InverseBindingAdapter;
+import android.widget.TextView;
+
+/**
+ * Created by Khalil on 1/6/2018.
+ */
+
+public class BindingAdapters {
     @BindingAdapter("android:text")
     public static void setText(TextView view, int value) {
         if (view.getText() != null
@@ -20,3 +26,4 @@ Use of BindigAdapter can be used as
             return 0;
         }
     }
+}
